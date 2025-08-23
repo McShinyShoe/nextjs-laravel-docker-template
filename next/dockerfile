@@ -1,0 +1,17 @@
+# Build-time argument
+ARG NEXT_FOLDER=web
+FROM node:20-alpine
+
+WORKDIR /app
+
+COPY ${NEXT_FOLDER}/package*.json ./
+
+RUN npm install
+
+COPY ${NEXT_FOLDER} ./
+
+RUN npm run build
+
+EXPOSE 3000
+
+CMD ["npm", "start"]
