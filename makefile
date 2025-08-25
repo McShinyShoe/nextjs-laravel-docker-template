@@ -36,6 +36,7 @@ init-next:
 
 purge:
 	sudo rm $(LARAVEL_FOLDER) -rf
+	sudo rm $(NEXT_FOLDER) -rf
 
 all: clean mysql $(REDIS_TARGET) $(MAIL_TARGET) ${PHPMYADMIN_TARGET}\
 	 next nginx npm-build composer-install composer-migrate-fresh \
