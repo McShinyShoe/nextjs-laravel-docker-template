@@ -1,13 +1,14 @@
-# Laravel Docker Template
-Too lazy to set up a stack for laravel in docker? Just copy this project and you have a working laravel stack.
+# NextJs + Laravel Docker Template
+Too lazy to set up a stack for laravel and next.js in docker? Just copy this project and you have a working laravel stack.
 
-By default Laravel folder is located at the folder `web`, but you can change it by changing this line in `.env`
+By default Laravel folder is located at the folder `api`, and next.js folder is at `web`, but you can change it by changing this line in `.env`
 ``` bash
-LARAVEL_FOLDER=web
+LARAVEL_FOLDER=api
+NEXT_FOLDER=web
 ```
 
 ## Configuration
-It's discouraged to edit the `docker-compose.yaml` and the `web/.env` file directly. Most of the app configuration is in `.env` file in the root of the project. 
+It's discouraged to edit the `docker-compose.yaml` and the `api/.env` file directly. Most of the app configuration is in `.env` file in the root of the project. 
 
 Before running the application, copy the `./env.example` file at the root of the project into a file named`.env`.
 
@@ -88,5 +89,5 @@ make clean
 
 ### Purge
 ``` bash
-make purge # Will remove the `web` directory
+make purge # Will remove the LARAVEL_FOLDER and NEXT_FOLDER directory
 ```
